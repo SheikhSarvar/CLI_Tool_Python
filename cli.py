@@ -60,8 +60,8 @@ def user_valid(csv_file):
         sys.exit(1)
 
     df = pd.read_csv(csv_file) if file_extension.lower() == '.csv' else pd.read_excel(csv_file)
-    df = valid_df_row(df)
     df = clean_df(df)
+    df = valid_df_row(df)
     batches = [df['Full_Postal_Address'][i:i+1000] for i in range(0, len(df), 1000)]
     results = []
     for i, batch in enumerate(batches):

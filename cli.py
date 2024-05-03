@@ -71,6 +71,7 @@ def process_batch(batch, results_list):
     batch_results = [geocode_address(address) for address in batch]
     results_list.extend(batch_results)
 
+
 def user_valid(csv_file):
     # Checking if file exists
     if not os.path.exists(csv_file):
